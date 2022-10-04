@@ -1,0 +1,41 @@
+---
+title: "How to Search and Compare PubMed Articles"
+subtitle: "Practical user guides with integrated solutions"
+author: "Teresia Mrema-Buza, A Bioinformatics Scientist and Data Science Enthusiast"
+date: "Updated on `r Sys.Date()`"
+site: bookdown::bookdown_site
+knit: bookdown::render_book
+output:
+  bookdown::bs4_book:
+    includes:
+      in_header:
+    template: bs4_template.html
+documentclass: book
+classoption: openany #remove empty pages in pdf doc
+bibliography:
+- library/bibliography.bib
+citation_package:
+- natbib
+colorlinks: true
+css:
+  - style.css
+always_allow_html: true
+fig_caption: true
+fontsize: 12pt
+geometry: margin=1in
+indent: false
+keep_tex: true
+link-citations: true
+mainfont: Times New Roman
+biblio-style: apalike
+description: |
+  This guide provides integrated and highly curated solutions for achieving better results.
+---
+
+# Quick Glimpse {-#glimpse}
+
+...Placeholder for cover image...
+<a href=""><img src="img/placeholder.png" alt="Cover Image" width="100%" style="padding: 50px 0px 50px 0px; float: right;"/></a>
+
+## Structure of this guide {-}
+This guide is divided into chapters to facilitate easy navigation. Each chapter contains several sections as displayed in the navigation bars on the left and right. Click the hyper-linked text if you want to jump into a specific chapter or section.
