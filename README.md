@@ -1,2 +1,2 @@
 # Searching and Comparing Pubmed Articles
-Search and compare number of articles in PubMed across different fields.
+Searching and comparing number of articles in PubMed across different fields.
