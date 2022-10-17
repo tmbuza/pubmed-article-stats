@@ -1,12 +1,13 @@
 language:
   ui:
     chapter_name: "Chapter "
-delete_merged_file: true
+delete_merged_file: false
 
-book_filename: "web-apps"
+book_filename: "pubmed-stats"
 output_dir:
 rmd_files: [
 "index.Rmd",
-
-"999-references.Rmd"
+"01_search_pubmed.Rmd",
+"02_plot_article_count.Rmd",
+"999-references.Rmd",
 ]

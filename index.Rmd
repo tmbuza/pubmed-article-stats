@@ -1,7 +1,7 @@
 ---
-title: "How to Search and Compare PubMed Articles"
-subtitle: "Practical user guides with integrated solutions"
-author: "Teresia Mrema-Buza, A Bioinformatics Scientist and Data Science Enthusiast"
+title: "Searching and Comparing PubMed Article Using R"
+subtitle: "A simple practical user guides for publication statistics"
+author: "<strong>Teresia Mrema Buza</strong>"
 date: "Updated on `r Sys.Date()`"
 site: bookdown::bookdown_site
 knit: bookdown::render_book
@@ -12,13 +12,10 @@ output:
     template: bs4_template.html
 documentclass: book
 classoption: openany #remove empty pages in pdf doc
-bibliography:
-- library/bibliography.bib
-citation_package:
-- natbib
 colorlinks: true
 css:
-  - style.css
+- style.css
+- css/style.css
 always_allow_html: true
 fig_caption: true
 fontsize: 12pt
@@ -29,13 +26,73 @@ link-citations: true
 mainfont: Times New Roman
 biblio-style: apalike
 description: |
-  This guide provides integrated and highly curated solutions for achieving better results.
+  Tracking and comparing articles published in the NCBI PubMed Database.
 ---
 
-# Quick Glimpse {-#glimpse}
+# PubMed Publications Tracking {#pubmed-search}
 
-...Placeholder for cover image...
-<a href=""><img src="img/placeholder.png" alt="Cover Image" width="100%" style="padding: 50px 0px 50px 0px; float: right;"/></a>
+```{r include=FALSE}
+library(DiagrammeR)
+library(DiagrammeRsvg)
+library(rentrez)
+library(glue)
+library(tidyverse, suppressPackageStartupMessages)
+library(tictoc)
+library(xlsx)
+
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  cache = FALSE,
+  comment = NA,
+  fig.path='./figures/',
+  fig.show='asis',
+  dev = 'png',
+  fig.align='center',
+  out.width = "70%",
+  fig.width = 7,
+  fig.asp = 0.7,
+  fig.show = "asis"
+)
+```
+
+## General Workflow
+```{r echo=FALSE}
+mermaidgraph <- mermaid("graph TD
+
+subgraph  
+A[<b>SEARCHING PUBMED ARTICLES</b>] -->  |Searching<br>Manually| B[Create Search Terms]
+B --> C[NCBI PubMed Database] 
+C --> |Results| C1[Indexed Papers in PubMed]
+C1 --> |Download results| D[Results by Year in CSV format]
+D --> |Filename| E[PubMed_Timeline_Results_by_Year.csv]
+E --> F[Save the file in the data directory]
+F -.-> G[Further Analysis in R<br>Such as plotting the results]
+
+
+A --> |Seaching <br>Using a Code| H[Import Basic Libraries<li>rentrez</li><li>glue</li><li>tidyverse</li>]
+H --> I[Define Search Terms]
+I --> |Search counts| J[Computationally Get Search Counts]
+J --> |Result<br> Manipulation| K[Tidying, Filtering, Transformation]
+K --> L[Clean Data]
+L --> F
+
+end
+
+", height = 800, width = 500)
+
+mermaidgraph
+
+```
 
 ## Structure of this guide {-}
-This guide is divided into chapters to facilitate easy navigation. Each chapter contains several sections as displayed in the navigation bars on the left and right. Click the hyper-linked text if you want to jump into a specific chapter or section.
+This guide is divided into sections to facilitate easy navigation. The main chapter contains several sections as displayed in the navigation bars on the left and right. Click the hyper-linked text if you want to jump into a specific chapter or section.
+
+## Code availability {-}
+The code that generated this guide is available at a public [GitHub repository](https://github.com/tmbuza/pubmed-article-stats) or via a [GH-Page](https://tmbuza.github.io/pubmed-article-stats/). If interested you can request a consulting service by contacting the developer of this repo using <a href="https://complexdatainsights.com/contact-us">this contact form</a>.
+
+
+
+
+
