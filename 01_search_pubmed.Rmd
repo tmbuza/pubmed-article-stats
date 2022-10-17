@@ -16,7 +16,8 @@ all_search <- glue("{year}[PDAT]")
 
 # Getting Article Counts
 ```{r}
-toc() # Search run time
+library(tictoc)
+tic()
 
 search_counts <- tibble(year = year,
        microbiome_search = microbiome_search,
@@ -47,8 +48,13 @@ search_counts <- tibble(year = year,
 paste("The search took", toc())
 ```
 
-Saving search results
+## Saving results in multiple formats
+- CSV
+- XLSX
+- RDS
+
 ```{r}
 write_csv(search_counts, "data/search_counts.csv", col_names = TRUE)
-
+write.xlsx(search_counts, "data/search_counts.xlsx", col_names = TRUE)
+saveRDS(search_counts, "data/search_counts.rds", col_names = TRUE)
 ```
