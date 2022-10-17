@@ -15,7 +15,6 @@ classoption: openany #remove empty pages in pdf doc
 colorlinks: true
 css:
 - style.css
-- css/style.css
 always_allow_html: true
 fig_caption: true
 fontsize: 12pt
@@ -29,7 +28,7 @@ description: |
   Tracking and comparing articles published in the NCBI PubMed Database.
 ---
 
-# PubMed Publications Tracking {#pubmed-search}
+# PubMed Publications Tracking {#pubmed-tracking}
 
 ```{r include=FALSE}
 library(DiagrammeR)
@@ -40,6 +39,7 @@ library(tidyverse, suppressPackageStartupMessages)
 library(tictoc)
 library(xlsx)
 
+## Default parameters
 knitr::opts_chunk$set(
   echo = TRUE,
   message = FALSE,
