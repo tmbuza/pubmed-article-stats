@@ -30,7 +30,8 @@ description: |
 
 # PubMed Publications Tracking {#pubmed-tracking}
 
-```{r include=FALSE}
+## Required packages
+```{r}
 library(DiagrammeR)
 library(DiagrammeRsvg)
 library(rentrez)
@@ -38,8 +39,10 @@ library(glue)
 library(tidyverse, suppressPackageStartupMessages)
 library(tictoc)
 library(xlsx)
+```
 
 ## Default parameters
+```{r
 knitr::opts_chunk$set(
   echo = TRUE,
   message = FALSE,
