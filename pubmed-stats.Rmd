@@ -15,7 +15,6 @@ classoption: openany #remove empty pages in pdf doc
 colorlinks: true
 css:
 - style.css
-- css/style.css
 always_allow_html: true
 fig_caption: true
 fontsize: 12pt
@@ -29,9 +28,10 @@ description: |
   Tracking and comparing articles published in the NCBI PubMed Database.
 ---
 
-# PubMed Publications Tracking {#pubmed-search}
+# PubMed Publications Tracking {#pubmed-tracking}
 
-```{r include=FALSE}
+## Required packages
+```{r}
 library(DiagrammeR)
 library(DiagrammeRsvg)
 library(rentrez)
@@ -39,7 +39,10 @@ library(glue)
 library(tidyverse, suppressPackageStartupMessages)
 library(tictoc)
 library(xlsx)
+```
 
+## Default parameters
+```{r}
 knitr::opts_chunk$set(
   echo = TRUE,
   message = FALSE,
@@ -83,7 +86,6 @@ end
 ", height = 800, width = 500)
 
 mermaidgraph
-
 ```
 
 ## Structure of this guide {-}
@@ -91,10 +93,6 @@ This guide is divided into sections to facilitate easy navigation. The main chap
 
 ## Code availability {-}
 The code that generated this guide is available at a public [GitHub repository](https://github.com/tmbuza/pubmed-article-stats) or via a [GH-Page](https://tmbuza.github.io/pubmed-article-stats/). If interested you can request a consulting service by contacting the developer of this repo using <a href="https://complexdatainsights.com/contact-us">this contact form</a>.
-
-
-
-
 
 
 <!--chapter:end:index.Rmd-->
